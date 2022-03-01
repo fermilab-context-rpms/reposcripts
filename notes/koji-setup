@@ -1,0 +1,55 @@
+koji add-host ${HOSTNAME} aarch64 ppc64le x86_64
+koji edit-host --capacity=8 ${HOSTNAME}
+koji add-host-to-channel  ${HOSTNAME} createrepo
+
+###########################################################################
+
+koji add-tag --arches=aarch64,ppc64le,x86_64 CentOS_Stream_8
+koji add-tag --arches=aarch64,ppc64le,x86_64 Fermilab-CentOS-Stream8-TESTING
+koji add-tag --arches=aarch64,ppc64le,x86_64 Fermilab-CentOS-Stream8-RELEASE
+
+koji add-group CentOS_Stream_8 srpm-build
+koji add-group-pkg CentOS_Stream_8 srpm-build bash curl git gnupg make redhat-rpm-config rpm-build shadow-utils system-release which
+
+koji add-group  CentOS_Stream_8 build
+koji add-group-pkg CentOS_Stream_8 build bash bzip2 coreutils cpio diffutils findutils gawk gcc gcc-c++ gnupg grep gzip info make patch redhat-rpm-config rpm-build sed shadow-utils system-release tar unzip util-linux which xz
+
+koji add-target stream8 CentOS_Stream_8 Fermilab-CentOS-Stream8-TESTING
+
+koji add-external-repo -t CentOS_Stream_8 -p 10 'CentOS Stream 8 Local RPMs' "http://${HOSTNAME}/kojifiles/local/stream8/"
+koji add-external-repo -t CentOS_Stream_8 -p 12 'CentOS Stream 8 BaseOS' 'https://linux-mirrors.fnal.gov/linux/centos/8-stream/BaseOS/$arch/os/'
+koji add-external-repo -t CentOS_Stream_8 -p 15 'CentOS Stream 8 AppStream' 'https://linux-mirrors.fnal.gov/linux/centos/8-stream/AppStream/$arch/os/'
+koji add-external-repo -t CentOS_Stream_8 -p 20 'CentOS Stream 8 PowerTools' 'https://linux-mirrors.fnal.gov/linux/centos/8-stream/PowerTools/$arch/os/'
+koji add-external-repo -t CentOS_Stream_8 -p 25 'EPEL 8 Next Everything' 'https://linux-mirrors.fnal.gov/linux/fedora/epel/next/8/Everything/$arch'
+koji add-external-repo -t CentOS_Stream_8 -p 30 'EPEL 8 Everything' 'https://linux-mirrors.fnal.gov/linux/fedora/epel/8/Everything/$arch'
+
+koji edit-tag CentOS_Stream_8 -x mock.releasever=8
+koji edit-tag CentOS_Stream_8 -x mock.forcearch=true
+
+koji regen-repo --nowait CentOS_Stream_8
+
+###########################################################################
+
+koji add-tag --arches=aarch64,ppc64le,x86_64 CentOS_Stream_9
+koji add-tag --arches=aarch64,ppc64le,x86_64 Fermilab-CentOS-Stream9-TESTING
+koji add-tag --arches=aarch64,ppc64le,x86_64 Fermilab-CentOS-Stream9-RELEASE
+
+koji add-group CentOS_Stream_9 srpm-build
+koji add-group-pkg CentOS_Stream_9 srpm-build bash curl git gnupg make redhat-rpm-config rpm-build shadow-utils system-release which
+
+koji add-group  CentOS_Stream_9 build
+koji add-group-pkg CentOS_Stream_9 build bash bzip2 coreutils cpio diffutils findutils gawk gcc gcc-c++ gnupg grep gzip info make patch redhat-rpm-config rpm-build sed shadow-utils system-release tar unzip util-linux which xz
+
+koji add-target stream9 CentOS_Stream_9 Fermilab-CentOS-Stream9-TESTING
+
+koji add-external-repo -t CentOS_Stream_9 -p 10 'CentOS Stream 9 Local RPMs' "http://${HOSTNAME}/kojifiles/local/stream9/"
+koji add-external-repo -t CentOS_Stream_9 -p 12 'CentOS Stream 9 BaseOS' 'https://linux-mirrors.fnal.gov/linux/centos-stream/9-stream/BaseOS/$arch/os/'
+koji add-external-repo -t CentOS_Stream_9 -p 15 'CentOS Stream 9 AppStream' 'https://linux-mirrors.fnal.gov/linux/centos-stream/9-stream/AppStream/$arch/os/'
+koji add-external-repo -t CentOS_Stream_9 -p 20 'CentOS Stream 9 Code Ready Builder' 'https://linux-mirrors.fnal.gov/linux/centos-stream/9-stream/CRB/$arch/os/'
+koji add-external-repo -t CentOS_Stream_9 -p 25 'EPEL 9 Next Everything' 'https://linux-mirrors.fnal.gov/linux/fedora/epel/next/9/Everything/$arch'
+koji add-external-repo -t CentOS_Stream_9 -p 30 'EPEL 9 Everything' 'https://linux-mirrors.fnal.gov/linux/fedora/epel/9/Everything/$arch'
+
+koji edit-tag CentOS_Stream_9 -x mock.releasever=9
+koji edit-tag CentOS_Stream_9 -x mock.forcearch=true
+
+koji regen-repo --nowait CentOS_Stream_9

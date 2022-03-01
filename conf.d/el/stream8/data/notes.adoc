@@ -1,0 +1,134 @@
+= Fermilab RPMs for EL8 (RHEL8, CentOS 8, and similar) =
+// if you have the images for block styles in "./images" they can be put inline
+
+This repository contains RPMs to assist with using the Fermilab General Computing Environment on EL8 systems.
+
+Packages in this repository are signed by https://linux-mirrors.fnal.gov/linux/fermilab/centos/8/RPM-GPG-KEY-fermilab[GPG Key]:
+
+  pub   4096R/ABEC1471 2020-01-30
+  uid                  Fermilab RPM Key (Used for signing RPMs built at Fermilab) <LINUX-USERS@LISTSERV.FNAL.GOV>
+  sub   4096R/804610A8 2020-01-30
+
+== Installation Instructions ==
+
+There are three clear ways to load the relevant RPMs onto your system.  You may use more than one if you desire.
+
+=== 1. Full Automation ===
+
+TIP: The "Full Automation" RPM is targeted at systems on-site at Fermilab.  It may not be suitable for all off-site environments.
+
+WARNING: The following command will make a number of changes on your behalf!
+         These changes are not totally visable to you during installation!
+
+  yum install https://linux-mirrors.fnal.gov/linux/fermilab/centos/8/fermilab-apply-site-config.rpm
+
+NOTE: This RPM will remove itself from the system automatically.
+      This permits you to re-run this as often as you wish with one command.
+
+=== 2. Interactive Steps ===
+
+TIP: This method should work for any admin who wishes to install some or all of the Fermilab packages.
+
+You will need to install the fermilab yum repo
+
+  yum install https://linux-mirrors.fnal.gov/linux/fermilab/centos/8/yum-conf-fermilab.rpm
+
+* To get <<list_of_packages,specific packages>>, you can install them as normal now:
+
+  yum install ${SOMEPACKAGE}
+
+* To get the minimum requirements for on-site computing:
+
+  yum install fermilab-base_on-site
+
+* To get all the recommended packages run:
+
+  yum group install fermilab
+
+* To get all the recommended and optional packages run:
+
+  yum group install --with-optional fermilab
+
+NOTE: You can run these `yum` commands multiple times if you wish.
+
+=== 3. From Kickstart ===
+
+Add the yum repo to your known repos:
+
+ repo --name=fermilab --baseurl=https://linux-mirrors.fnal.gov/linux/fermilab/centos/$releasever/$basearch/
+ %packages
+ @fermilab
+
+Or you may specify any <<list_of_packages,specific packages>> you wish to select from this repo
+
+== Additional Information on Packages ==
+
+[[list_of_packages]]
+
+fermilab-apply-site-config::
+This package will install the Fermilab RPMs repo and fork off a second task to install any expected RPMs.
+
+fermilab-base_on-site::
+This package depends on the config RPMs that will alter your system settings for use at Fermilab.
+
+fermilab-conf_ca-certs::
+Adds the Fermilab CA Certificates (for our local CA) to your CA Trust Store.
+You can fetch them directly from https://authentication.fnal.gov/certs/
+
+fermilab-conf_doe-banner-cockpit::
+Add a notification banner to the cockpit login screen regarding your rights and restrictions on the Fermilab Network.
+
+fermilab-conf_doe-banner-console::
+Add a notification banner to the text console regarding your rights and restrictions on the Fermilab Network.
+
+fermilab-conf_doe-banner-login-screen::
+Add a notification banner to the GDM login window regarding your rights and restrictions on the Fermilab Network.
+
+fermilab-conf_email-gateway::
+Setup postfix to route outbound email through an approved mail gateway.
+
+fermilab-conf_install-updates::
+Ensure all system updates are applied nightly.
+
+fermilab-conf_kerberos::
+Load the Fermilab Kerberos configuration settings.
+
+NOTE: fermilab-conf_kerberos no longer uses +/etc/kdc.list+ to customize
+      the default kdc list.  You should instead create a custom entry in
+      +/etc/krb5.conf.d/99-my-kdcs.conf+ with your expected settings.
+
+fermilab-conf_login-screen-no-user-list::
+Do not show a list of valid users on the GDM login window.
+
+fermilab-conf_screenlock::
+Setup Gnome, KDE, and Mate screensaver to lock automatically after inactivity.
+
+fermilab-conf_ssh-client::
+Add SSH client settings useful for connecting to Fermilab SSH Servers.
+
+fermilab-conf_ssh-server::
+Configure your SSH Server for use on the Fermilab Network.
+
+fermilab-conf_sssd::
+Configure SSSD to permit Kerberos or local password authentication.
+This package also provides behavior similar to `fermilab-conf_kerberos-local-passwords` from the SL7 Fermilab Context.
+
+NOTE: fermilab-conf_sssd will attempt to reconfigure authentication on your system.
+
+fermilab-conf_system-logger::
+Forward your system logs from rsyslogd to the Central Log Server.
+
+fermilab-conf_timesync::
+Setup chronyd to use the Fermilab approved timeservers.
+
+fermilab-util_kcron::
+Setup Kerberos rights for scheduled jobs and daemons.
+
+fermilab-util_makehostkeys::
+A simple utility to fetch Kerberos keytabs.
+
+fermilab-util_ocsinventory::
+Configuration for the Fermilab OCS Inventory Server.
+
+yum-conf-fermilab::
+The yum repo definitions for the Fermilab repos.
