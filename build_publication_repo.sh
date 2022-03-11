@@ -223,6 +223,9 @@ fi
 echo "Running chown -Rh ${CHOWN_AS} ${DIST_REPO_SYNC_TARGET}"
 chown -Rh ${CHOWN_AS} ${DIST_REPO_SYNC_TARGET}/*
 
+echo "Hardlinking ${DIST_REPO_SYNC_TARGET}"
+hardlink -c -v ${DIST_REPO_SYNC_TARGET}
+
 echo ''
 
 echo "Repo from ${KOJI_TAG} at ${DIST_REPO_SYNC_TARGET} ready for sync"
