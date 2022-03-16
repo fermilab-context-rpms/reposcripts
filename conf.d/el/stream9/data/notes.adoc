@@ -13,7 +13,7 @@ Packages in this repository are signed by https://linux-mirrors.fnal.gov/linux/f
 
 == Source Repos ==
 
-The source for packages in these repos can be found at https://github.com/fermilab-context-rpms.  You can review it for recomendations on how to configure your system if use these packages are not right for your environment.
+The source for packages in these repos can be found at https://github.com/fermilab-context-rpms.  You can review it for recomendations on how to configure your system if use of these packages is not right for your environment.
 
 == Installation Instructions ==
 
