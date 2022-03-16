@@ -17,6 +17,8 @@ The source for packages in these repos can be found at https://github.com/fermil
 
 There are three clear ways to load the relevant RPMs onto your system.  You may use more than one if you desire.
 
+NOTE: These RPMs will own their configuration files.  Any local changes will be reverted upon upgrade.  Your modified files will be saved off as `.rpmsave` files.
+
 === 1. Full Automation ===
 
 TIP: The "Full Automation" RPM is targeted at systems on-site at Fermilab.  It may not be suitable for all off-site environments.

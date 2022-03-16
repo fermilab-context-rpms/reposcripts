@@ -19,7 +19,7 @@ The source for packages in these repos can be found at https://github.com/fermil
 
 RPMs can be loaded interactively with dnf/yum and/or at install time with Kickstart.
 
-NOTE: These RPMs will own their configuration files.  Any local changes will be reverted upon upgrade.  Your modified files will be saved off as `.rpmnew` files.
+NOTE: These RPMs will own their configuration files.  Any local changes will be reverted upon upgrade.  Your modified files will be saved off as `.rpmsave` files.
 
 === 1. Interactive Steps ===
 
