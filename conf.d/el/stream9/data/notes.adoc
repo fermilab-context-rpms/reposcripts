@@ -11,9 +11,16 @@ Packages in this repository are signed by https://linux-mirrors.fnal.gov/linux/f
   uid                  Fermilab RPM Key (Used for signing RPMs built at Fermilab) <LINUX-USERS@LISTSERV.FNAL.GOV>
   sub   4096R/804610A8 2020-01-30
 
+== Source Repos ==
+
+The source for packages in these repos can be found at https://github.com/fermilab-context-rpms.  You can review it for recomendations o
+n how to configure your system if use these packages are not right for your environment.
+
 == Installation Instructions ==
 
 RPMs can be loaded interactively with dnf/yum and/or at install time with Kickstart.
+
+NOTE: These RPMs will own their configuration files.  Any local changes will be reverted upon upgrade.  Your modified files will be saved off as `.rpmnew` files.
 
 === 1. Interactive Steps ===
 
