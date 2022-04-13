@@ -119,6 +119,8 @@ Add a firewall zone with the FNAL IP ranges.
 fermilab-conf_firewall-firewalld::
 Add a firewalld zone with the FNAL IP ranges.
 
+NOTE: This rpm will reload the firewalld config.
+
 fermilab-conf_install-updates::
 Ensure all system updates are applied nightly.
 
@@ -144,6 +146,9 @@ Setup screensaver to lock automatically after inactivity on supported desktops.
 fermilab-conf_screenlock-gnome::
 Setup Gnome screensaver to lock automatically after inactivity.
 
+fermilab-conf_ssh::
+Pull in SSH config settings useful for connecting to Fermilab SSH Servers.
+
 fermilab-conf_ssh-client::
 Add SSH client settings useful for connecting to Fermilab SSH Servers.
 
@@ -155,6 +160,7 @@ Configure SSSD to permit Kerberos or local password authentication.
 This package also provides behavior similar to `fermilab-conf_kerberos-local-passwords` from the SL7 Fermilab Context.
 
 NOTE: fermilab-conf_sssd will attempt to reconfigure authentication on your system.
+      If this fails, you will need to manually run `authselect` for your system.
 
 fermilab-conf_system-logger::
 Forward your system logs to the Central Log Server.
