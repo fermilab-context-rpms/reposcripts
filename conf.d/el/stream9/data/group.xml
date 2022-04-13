@@ -11,8 +11,7 @@
       <packagereq type='mandatory'>dnf-automatic</packagereq>
 
       <packagereq type='mandatory'>fermilab-base_on-site</packagereq>
-      <packagereq type='mandatory'>fermilab-conf_doe-banner-console</packagereq>
-      <packagereq type='mandatory'>fermilab-conf_doe-banner-login-screen</packagereq>
+      <packagereq type='mandatory'>fermilab-conf_doe-banner</packagereq>
       <packagereq type='mandatory'>fermilab-conf_install-updates</packagereq>
       <packagereq type='mandatory'>fermilab-conf_kerberos</packagereq>
       <packagereq type='mandatory'>fermilab-conf_login-screen-no-user-list</packagereq>
@@ -23,7 +22,7 @@
 
       <packagereq type='default'>fermilab-conf_email-gateway</packagereq>
       <packagereq type='default'>fermilab-conf_firewall</packagereq>
-      <packagereq type='default'>fermilab-conf_ssh-client</packagereq>
+      <packagereq type='default'>fermilab-conf_ssh</packagereq>
       <packagereq type='default'>fermilab-conf_sssd</packagereq>
       <packagereq type='default'>fermilab-conf_timesync</packagereq>
       <packagereq type='default'>krb5-workstation</packagereq>

@@ -171,6 +171,9 @@ done
 
 echo ''
 
+# cleanup any old repodata just to be safe
+find ${DIST_REPO_SYNC_TARGET} -type d -name repodata -exec rm -rf {} 2>/dev/null \;
+
 # sync over the dist-repo
 echo "rsync -avH --delete ${DIST_REPO_SYNC_SOURCE} ${DIST_REPO_SYNC_TARGET}"
 rsync -avH --delete ${DIST_REPO_SYNC_SOURCE} ${DIST_REPO_SYNC_TARGET}
