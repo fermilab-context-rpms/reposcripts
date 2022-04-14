@@ -17,12 +17,11 @@
       <packagereq type='mandatory'>fermilab-conf_login-screen-no-user-list</packagereq>
       <packagereq type='mandatory'>fermilab-conf_ocsinventory</packagereq>
       <packagereq type='mandatory'>fermilab-conf_screenlock</packagereq>
-      <packagereq type='mandatory'>fermilab-conf_ssh-server</packagereq>
+      <packagereq type='mandatory'>fermilab-conf_ssh</packagereq>
       <packagereq type='mandatory'>fermilab-conf_system-logger</packagereq>
 
       <packagereq type='default'>fermilab-conf_email-gateway</packagereq>
       <packagereq type='default'>fermilab-conf_firewall</packagereq>
-      <packagereq type='default'>fermilab-conf_ssh</packagereq>
       <packagereq type='default'>fermilab-conf_sssd</packagereq>
       <packagereq type='default'>fermilab-conf_timesync</packagereq>
       <packagereq type='default'>krb5-workstation</packagereq>
