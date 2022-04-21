@@ -147,7 +147,7 @@ fermilab-conf_screenlock-gnome::
 Setup Gnome screensaver to lock automatically after inactivity.
 
 fermilab-conf_ssh::
-Pull in SSH config settings useful for connecting to Fermilab SSH Servers.
+Pull in SSH config settings useful for Fermilab SSH Servers.
 
 fermilab-conf_ssh-client::
 Add SSH client settings useful for connecting to Fermilab SSH Servers.
