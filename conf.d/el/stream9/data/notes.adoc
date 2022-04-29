@@ -178,7 +178,7 @@ fermilab-util_kcron::
 Setup Kerberos rights for scheduled jobs and daemons.
 
 fermilab-util_kx509::
-A simple utility to fetch CI Logon certificates for Fermilab
+A simple utility to fetch CI Logon certificates for Fermilab.
 
 fermilab-util_makehostkeys::
 A simple utility to fetch Kerberos keytabs.
@@ -188,3 +188,12 @@ The yum repo definitions for the Fermilab repos.
 
 yum-conf-fermilab-gpgkey::
 The GPG key used in the yum repo definitions for the Fermilab repos.
+
+yum-conf-fermilab-mirror::
+DNF/Yum repo definitions for Fermilab's local mirrors.
+
+yum-conf-fermilab-mirror-centos-stream::
+DNF/Yum repo definitions for Fermilab's local mirror of CentOS Stream.
+
+yum-conf-fermilab-mirror-epel::
+DNF/Yum repo definitions for Fermilab's local mirror of EPEL.
