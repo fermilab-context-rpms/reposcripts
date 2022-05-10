@@ -210,7 +210,7 @@ if [[ "${IS_TESTING_REPO}" != 'TRUE' ]]; then
             SAMEDIR=$(dirname $FILENAME)
             SAMEDIR_REPOLOCAL=$(echo ${SAMEDIR} | sed -e "s|${DIST_REPO_SYNC_TARGET}||")
             PACKAGE_NAME=$(rpm -qp --qf "%{NAME}" ${FILENAME})
-            NEWEST_TOP_RPM=$(basename $(newest_rpm_from_list $(ls ${SAMEDIR}/${PACKAGE_NAME}*.noarch.rpm | tr '\012' ' ')))
+            NEWEST_TOP_RPM=$(basename $(newest_rpm_from_list $(ls ${SAMEDIR}/${PACKAGE_NAME}*.noarch.rpm | grep -v mirror | tr '\012' ' ')))
         
             echo "Making ${PACKAGE_NAME}.rpm"
             (
