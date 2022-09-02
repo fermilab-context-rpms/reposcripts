@@ -200,7 +200,7 @@ if [[ "${IS_TESTING_REPO}" != 'TRUE' ]]; then
             RELEASE_NOTES_OUTPUT_HTML_FILENAME=$(basename ${RELEASE_NOTES_SOURCE_ADOC_FILENAME} | sed -e 's/\.adoc/.html/')
         fi
         echo "Making ${RELEASE_NOTES_OUTPUT_HTML_FILENAME}"
-        asciidoc -a data-uri -a icons -a toc -o ${DIST_REPO_SYNC_TARGET}/${RELEASE_NOTES_OUTPUT_HTML_FILENAME} ${RELEASE_NOTES_SOURCE_ADOC_FILENAME}
+        asciidoc -a data-uri -a icons -o ${DIST_REPO_SYNC_TARGET}/${RELEASE_NOTES_OUTPUT_HTML_FILENAME} ${RELEASE_NOTES_SOURCE_ADOC_FILENAME}
     fi
 
     for seed in "${INITIAL_REPO_RPM}" "${INITIAL_AUTOMATION_RPM}"; do
