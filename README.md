@@ -8,7 +8,7 @@ fermilab context repos.
 We've got an automation script that wraps around `koji`'s actual commands.
 
 ```shell
-koji-build.sh -t stream# -p mypkg
+koji-build.sh -t alma# -p mypkg
 ```
 
 ## Download, Sign, and Import
@@ -26,14 +26,14 @@ It also does various repo copy and setup for you to `rsync` up yourself.
 Scripts exist for this on the dist-release server under: `~/scripts/rsync/`.
 
 ```shell
-build_publication_repo.sh -c conf.d/el/stream#/testing.conf
+build_publication_repo.sh -c conf.d/el/alma#/testing.conf
 ```
 
 ## Promote a package
 
 ```shell
-koji untag Fermilab-CentOS-Stream#-TESTING PKGNAME-VERSION-TESTING
-koji tag Fermilab-CentOS-Stream#-RELEASE PKGNAME-VERSION-RELEASE
+koji untag Fermilab-AlmaLinux#-TESTING PKGNAME-VERSION-TESTING
+koji tag Fermilab-AlmaLinux#-RELEASE PKGNAME-VERSION-RELEASE
 ```
 
 This will un-queue the package from TESTING and queue it up for RELEASE.
@@ -45,5 +45,5 @@ It also does various repo copy and setup for you to `rsync` up yourself.
 Scripts exist for this on the dist-release server under: `~/scripts/rsync/`.
 
 ```shell
-build_publication_repo.sh -c conf.d/el/stream#/release.conf
+build_publication_repo.sh -c conf.d/el/alma#/release.conf
 ```
