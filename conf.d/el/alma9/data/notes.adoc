@@ -192,6 +192,9 @@ The GPG key used in the yum repo definitions for the Fermilab repos.
 yum-conf-fermilab-mirror::
 DNF/Yum repo definitions for Fermilab's local mirrors.
 
+yum-conf-fermilab-mirror-almalinux::
+DNF/Yum repo definitions for Fermilab's local mirror of AlmaLinux.
+
 yum-conf-fermilab-mirror-centos-stream::
 DNF/Yum repo definitions for Fermilab's local mirror of CentOS Stream.
 
