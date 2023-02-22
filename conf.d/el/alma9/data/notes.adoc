@@ -200,3 +200,6 @@ DNF/Yum repo definitions for Fermilab's local mirror of CentOS Stream.
 
 yum-conf-fermilab-mirror-epel::
 DNF/Yum repo definitions for Fermilab's local mirror of EPEL.
+
+yum-conf-fermilab-mirror-epel-next::
+DNF/Yum repo definitions for Fermilab's local mirror of EPEL-Next.
