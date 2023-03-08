@@ -129,7 +129,7 @@ Load the Fermilab Kerberos configuration settings.
 
 NOTE: fermilab-conf_kerberos no longer uses +/etc/kdc.list+ to customize
       the default kdc list.  You should instead create a custom entry in
-      +/etc/krb5.conf.d/99-my-kdcs.conf+ with your expected settings.
+      +/etc/krb5.conf.d/00-my-kdcs.conf+ with your expected settings.
 
 fermilab-conf_login-screen-no-user-list::
 Do not show a list of valid users on the supported login windows.
