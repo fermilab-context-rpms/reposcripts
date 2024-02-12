@@ -94,6 +94,10 @@ A `sudo yum install` on this package will install those dependencies automatical
 It uses RPM's rich dependencies to suggest additional, optional, packages that may be useful.
 
 fermilab-conf_ca-certs::
+Place the Fermilab CA Certificates (for our local CA) in +/usr/share/fermilab-conf_ca-certs+.
+You can fetch them directly from https://authentication.fnal.gov/certs/
+
+fermilab-conf_ca-certs-trust::
 Adds the Fermilab CA Certificates (for our local CA) to your CA Trust Store.
 You can fetch them directly from https://authentication.fnal.gov/certs/
 
