@@ -150,7 +150,10 @@ fermilab-conf_screenlock::
 Setup screensaver to lock automatically after inactivity on supported desktops.
 
 fermilab-conf_screenlock-gnome::
-Setup Gnome screensaver to lock automatically after inactivity.
+Setup GNOME desktop to lock automatically after inactivity.
+
+fermilab-conf_screenlock-weston::
+Setup Weston desktop to lock automatically after inactivity.
 
 fermilab-conf_ssh::
 Pull in SSH config settings useful for Fermilab SSH Servers.
