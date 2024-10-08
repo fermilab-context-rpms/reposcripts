@@ -114,7 +114,7 @@ fermilab-conf_doe-banner-gdm::
 Add a notification banner to the GDM login window regarding your rights and restrictions on the Fermilab Network.
 
 fermilab-conf_doe-banner-login-screen::
-Add a notification banner to the supported login windows regarding your rights and restrictions on the Fermilab Network.
+Add a notification banner to the recognized login windows regarding your rights and restrictions on the Fermilab Network.
 
 fermilab-conf_email-gateway::
 Setup postfix to route outbound email through an approved mail gateway.
@@ -138,7 +138,7 @@ NOTE: fermilab-conf_kerberos no longer uses +/etc/kdc.list+ to customize
       +/etc/krb5.conf.d/00-my-kdcs.conf+ with your expected settings.
 
 fermilab-conf_login-screen-no-user-list::
-Do not show a list of valid users on the supported login windows.
+Do not show a list of valid users on the recognized login windows.
 
 fermilab-conf_login-screen-no-user-list-gdm::
 Do not show a list of valid users on the GDM login window.
@@ -147,7 +147,7 @@ fermilab-conf_ocsinventory::
 Configuration for the Fermilab OCS Inventory Server.
 
 fermilab-conf_screenlock::
-Setup screensaver to lock automatically after inactivity on supported desktops.
+Setup screensaver to lock automatically after inactivity on recognized desktops.
 
 fermilab-conf_screenlock-gnome::
 Setup GNOME desktop to lock automatically after inactivity.
