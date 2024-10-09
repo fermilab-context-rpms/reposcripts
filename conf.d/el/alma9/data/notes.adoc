@@ -127,6 +127,22 @@ Add a firewalld zone with the FNAL IP ranges.
 
 NOTE: This rpm will reload the firewalld config.
 
+fermilab-conf_http-use-syslog::
+Setup webservers to log into syslog.
+
+fermilab-conf_http-use-syslog-apache-httpd::
+Setup apache-httpd to log to syslog.
+
+NOTE: This rpm may result in double logging on your system.
+
+NOTE: The apache-httpd ErrorLog may only be defined once.
+      The definition closest to access is the one used.
+
+fermilab-conf_http-use-syslog-nginx::
+Setup nginx to log to syslog
+
+NOTE: This rpm may result in double logging on your system.
+
 fermilab-conf_install-updates::
 Ensure all system updates are applied nightly.
 
