@@ -25,6 +25,7 @@ koji add-external-repo -t CentOS_Stream_8 -p 30 'EPEL 8 Everything' 'https://lin
 
 koji edit-tag CentOS_Stream_8 -x mock.releasever=8
 koji edit-tag CentOS_Stream_8 -x mock.forcearch=true
+koji edit-tag CentOS_Stream_8 -x noarch_arches=x86_64
 
 koji regen-repo --nowait CentOS_Stream_8
 
@@ -51,5 +52,6 @@ koji add-external-repo -t CentOS_Stream_9 -p 30 'EPEL 9 Everything' 'https://lin
 
 koji edit-tag CentOS_Stream_9 -x mock.releasever=9
 koji edit-tag CentOS_Stream_9 -x mock.forcearch=true
+koji edit-tag CentOS_Stream_9 -x noarch_arches=x86_64
 
 koji regen-repo --nowait CentOS_Stream_9
