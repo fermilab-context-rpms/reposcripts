@@ -1,0 +1,90 @@
+= Fermilab RPMs for AlmaLinux 10, (RHEL10, CentOS Stream 10, and similar) =
+//////////////////////////////////////////
+// if you have the images for block styles in "./images" they can be put inline
+//////////////////////////////////////////
+
+This repository contains RPMs to assist with using the Fermilab General Computing Environment on EL10 systems.
+
+Packages in this repository are signed by https://linux-mirrors.fnal.gov/linux/fermilab/el/10/RPM-GPG-KEY-fermilab[GPG Key]:
+
+  pub   4096R/ABEC1471 2020-01-30
+        04E5A937582A5404773F2D09D996DC8FABEC1471
+  uid                  Fermilab RPM Key (Used for signing RPMs built at Fermilab) <LINUX-USERS@LISTSERV.FNAL.GOV>
+  sub   4096R/804610A8 2020-01-30
+
+== Source Repos ==
+
+The source for packages in these repos can be found at https://github.com/fermilab-context-rpms.  You can review it for recomendations on how to configure your system if use of these packages is not right for your environment.
+
+== Installation Instructions ==
+
+RPMs can be loaded interactively with dnf/yum and/or at install time with Kickstart.
+
+NOTE: These RPMs will own their configuration files.  Any local changes will be reverted upon upgrade.  Your modified files will be saved off as `.rpmsave` files.
+
+NOTE: You are expected to have working access to the OS repos.  If you require use of the local Fermilab mirrors you should install the +yum-conf-fermilab-mirror+ package first.
+
+=== 1. Interactive Steps ===
+
+TIP: This method should work for any admin who wishes to install some or all of the Fermilab packages.
+
+* You will need to install the fermilab yum repo
++
+.................
+sudo yum install https://linux-mirrors.fnal.gov/linux/fermilab/el/10/yum-conf-fermilab.rpm
+.................
++
+
+* To get <<list_of_packages,specific packages>>, you can install them as normal now:
++
+.................
+sudo yum install ${SOMEPACKAGE}
+.................
++
+
+* To get the minimum requirements for on-site computing:
++
+.................
+sudo yum install --setopt=install_weak_deps=False fermilab-base_on-site
+.................
++
+
+* To get all the recommended packages run:
++
+--
+.................
+sudo yum install --setopt=install_weak_deps=True fermilab-base_on-site
+.................
+or
+.................
+sudo yum group install fermilab
+.................
+--
++
+
+* To get all the recommended and optional packages run:
++
+.................
+sudo yum group install --with-optional fermilab
+.................
++
+
+//////////////////////////////////////////
+// Comment block to end complex list nesting
+//////////////////////////////////////////
+
+NOTE: These `yum` commands should not cause errors if run multiple times.
+
+=== 2. From Kickstart ===
+
+Add the yum repo to your known repos:
+
+ repo --name=fermilab --baseurl=https://linux-mirrors.fnal.gov/linux/fermilab/el/$releasever/$basearch/
+ %packages
+ @fermilab
+
+Or you may specify any <<list_of_packages,specific packages>> you wish to select from this repo
+
+== Additional Information on Fermilab Packages ==
+
+[[list_of_packages]]

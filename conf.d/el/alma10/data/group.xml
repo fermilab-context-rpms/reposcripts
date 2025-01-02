@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE comps PUBLIC "-//Red Hat, Inc.//DTD Comps info//EN" "comps.dtd">
+<comps>
+  <group>
+    <id>fermilab</id>
+    <name>Fermilab General Computing Environment</name>
+    <description>These are packages for the Fermilab computing environment.  They are here as a group so that they can easily be selected.</description>
+    <default>true</default>
+    <uservisible>true</uservisible>
+    <packagelist>
+      <packagereq type='mandatory'>dnf-automatic</packagereq>
+
+      <packagereq type='mandatory'>fermilab-base_on-site</packagereq>
+      <packagereq type='mandatory'>fermilab-conf_doe-banner</packagereq>
+      <packagereq type='mandatory'>fermilab-conf_install-updates</packagereq>
+      <packagereq type='mandatory'>fermilab-conf_kerberos</packagereq>
+      <packagereq type='mandatory'>fermilab-conf_login-screen-no-user-list</packagereq>
+      <packagereq type='mandatory'>fermilab-conf_ocsinventory</packagereq>
+      <packagereq type='mandatory'>fermilab-conf_screenlock</packagereq>
+      <packagereq type='mandatory'>fermilab-conf_ssh</packagereq>
+      <packagereq type='mandatory'>fermilab-conf_system-logger</packagereq>
+
+      <packagereq type='default'>fermilab-conf_email-gateway</packagereq>
+      <packagereq type='default'>fermilab-conf_firewall</packagereq>
+      <packagereq type='default'>fermilab-conf_sssd</packagereq>
+      <packagereq type='default'>fermilab-conf_timesync</packagereq>
+      <packagereq type='default'>krb5-workstation</packagereq>
+      <packagereq type='default'>yum-conf-fermilab</packagereq>
+
+      <packagereq type='optional'>fermilab-conf_ca-certs</packagereq>
+      <packagereq type='optional'>fermilab-util_makehostkeys</packagereq>
+      <packagereq type='optional'>fermilab-util_kcron</packagereq>
+    </packagelist>
+  </group>
+  <group>
+    <id>core</id>
+    <name>Core</name>
+    <packagelist>
+      <packagereq type='default'>yum-conf-fermilab</packagereq>
+    </packagelist>
+  </group>
+  <group>
+    <id>base</id>
+    <name>Base</name>
+    <packagelist>
+      <packagereq type='default'>yum-conf-fermilab</packagereq>
+      <packagereq type='default'>krb5-workstation</packagereq>
+    </packagelist>
+  </group>
+  <group>
+    <id>standard</id>
+    <name>Standard</name>
+    <packagelist>
+      <packagereq type='default'>yum-conf-fermilab</packagereq>
+      <packagereq type='default'>krb5-workstation</packagereq>
+    </packagelist>
+  </group>
+  <category>
+    <id>base-system</id>
+    <name>System</name>
+    <grouplist>
+      <groupid>fermilab</groupid>
+    </grouplist>
+  </category>
+</comps>
