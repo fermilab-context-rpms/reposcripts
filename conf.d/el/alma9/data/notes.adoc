@@ -5,7 +5,7 @@
 
 This repository contains RPMs to assist with using the Fermilab General Computing Environment on EL9 systems.
 
-Packages in this repository are signed by https://linux-mirrors.fnal.gov/linux/fermilab/almalinux/9/RPM-GPG-KEY-fermilab[GPG Key]:
+Packages in this repository are signed by https://linux-mirrors.fnal.gov/linux/fermilab/el/9/RPM-GPG-KEY-fermilab[GPG Key]:
 
   pub   4096R/ABEC1471 2020-01-30
         04E5A937582A5404773F2D09D996DC8FABEC1471
@@ -31,7 +31,7 @@ TIP: This method should work for any admin who wishes to install some or all of 
 * You will need to install the fermilab yum repo
 +
 .................
-sudo yum install https://linux-mirrors.fnal.gov/linux/fermilab/almalinux/9/yum-conf-fermilab.rpm
+sudo yum install https://linux-mirrors.fnal.gov/linux/fermilab/el/9/yum-conf-fermilab.rpm
 .................
 +
 
@@ -79,7 +79,7 @@ NOTE: These `yum` commands should not cause errors if run multiple times.
 
 Add the yum repo to your known repos:
 
- repo --name=fermilab --baseurl=https://linux-mirrors.fnal.gov/linux/fermilab/almalinux/$releasever/$basearch/
+ repo --name=fermilab --baseurl=https://linux-mirrors.fnal.gov/linux/fermilab/el/$releasever/$basearch/
  %packages
  @fermilab
 

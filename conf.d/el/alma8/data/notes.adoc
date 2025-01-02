@@ -3,7 +3,7 @@
 
 This repository contains RPMs to assist with using the Fermilab General Computing Environment on EL8 systems.
 
-Packages in this repository are signed by https://linux-mirrors.fnal.gov/linux/fermilab/almalinux/8/RPM-GPG-KEY-fermilab[GPG Key]:
+Packages in this repository are signed by https://linux-mirrors.fnal.gov/linux/fermilab/el/8/RPM-GPG-KEY-fermilab[GPG Key]:
 
   pub   4096R/ABEC1471 2020-01-30
   uid                  Fermilab RPM Key (Used for signing RPMs built at Fermilab) <LINUX-USERS@LISTSERV.FNAL.GOV>
@@ -26,7 +26,7 @@ TIP: The "Full Automation" RPM is targeted at systems on-site at Fermilab.  It m
 WARNING: The following command will make a number of changes on your behalf!
          These changes are not totally visable to you during installation!
 
-  yum install https://linux-mirrors.fnal.gov/linux/fermilab/almalinux/8/fermilab-apply-site-config.rpm
+  yum install https://linux-mirrors.fnal.gov/linux/fermilab/el/8/fermilab-apply-site-config.rpm
 
 NOTE: This RPM will remove itself from the system automatically.
       This permits you to re-run this as often as you wish with one command.
@@ -37,7 +37,7 @@ TIP: This method should work for any admin who wishes to install some or all of 
 
 You will need to install the fermilab yum repo
 
-  yum install https://linux-mirrors.fnal.gov/linux/fermilab/almalinux/8/yum-conf-fermilab.rpm
+  yum install https://linux-mirrors.fnal.gov/linux/fermilab/el/8/yum-conf-fermilab.rpm
 
 * To get <<list_of_packages,specific packages>>, you can install them as normal now:
 
@@ -61,7 +61,7 @@ NOTE: You can run these `yum` commands multiple times if you wish.
 
 Add the yum repo to your known repos:
 
- repo --name=fermilab --baseurl=https://linux-mirrors.fnal.gov/linux/fermilab/almalinux/$releasever/$basearch/
+ repo --name=fermilab --baseurl=https://linux-mirrors.fnal.gov/linux/fermilab/el/$releasever/$basearch/
  %packages
  @fermilab
 
