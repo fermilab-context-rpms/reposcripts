@@ -178,6 +178,10 @@ Pull in SSH config settings useful for Fermilab SSH Servers.
 fermilab-conf_ssh-client::
 Add SSH client settings useful for connecting to Fermilab SSH Servers.
 
+fermilab-conf_ssh-client-delegate-all::
+The `fermilab-conf_ssh-client` package tries to only delegate credentials if it detects the remote host is a FNAL system.
+This package sets the SSH client to just always try to forward credentials.
+
 fermilab-conf_ssh-server::
 Configure your SSH Server for use on the Fermilab Network.
 
