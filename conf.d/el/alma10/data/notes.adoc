@@ -31,21 +31,21 @@ TIP: This method should work for any admin who wishes to install some or all of 
 * You will need to install the fermilab yum repo
 +
 .................
-sudo yum install https://linux-mirrors.fnal.gov/linux/fermilab/el/10/yum-conf-fermilab.rpm
+sudo dnf install https://linux-mirrors.fnal.gov/linux/fermilab/el/10/yum-conf-fermilab.rpm
 .................
 +
 
 * To get <<list_of_packages,specific packages>>, you can install them as normal now:
 +
 .................
-sudo yum install ${SOMEPACKAGE}
+sudo dnf install ${SOMEPACKAGE}
 .................
 +
 
 * To get the minimum requirements for on-site computing:
 +
 .................
-sudo yum install --setopt=install_weak_deps=False fermilab-base_on-site
+sudo dnf install --setopt=install_weak_deps=False fermilab-base_on-site
 .................
 +
 
@@ -53,11 +53,11 @@ sudo yum install --setopt=install_weak_deps=False fermilab-base_on-site
 +
 --
 .................
-sudo yum install --setopt=install_weak_deps=True fermilab-base_on-site
+sudo dnf install --setopt=install_weak_deps=True fermilab-base_on-site
 .................
 or
 .................
-sudo yum group install fermilab
+sudo dnf group install fermilab
 .................
 --
 +
@@ -65,7 +65,7 @@ sudo yum group install fermilab
 * To get all the recommended and optional packages run:
 +
 .................
-sudo yum group install --with-optional fermilab
+sudo dnf group install --with-optional fermilab
 .................
 +
 
@@ -73,7 +73,7 @@ sudo yum group install --with-optional fermilab
 // Comment block to end complex list nesting
 //////////////////////////////////////////
 
-NOTE: These `yum` commands should not cause errors if run multiple times.
+NOTE: These `dnf` commands should not cause errors if run multiple times.
 
 === 2. From Kickstart ===
 
@@ -91,7 +91,7 @@ Or you may specify any <<list_of_packages,specific packages>> you wish to select
 
 fermilab-base_on-site::
 This package requires the config RPMs that will alter your system settings for use at Fermilab.
-A `sudo yum install` on this package will install those dependencies automatically.
+A `sudo dnf install` on this package will install those dependencies automatically.
 It uses RPM's rich dependencies to suggest additional, optional, packages that may be useful.
 
 fermilab-conf_doe-banner::
@@ -171,7 +171,7 @@ fermilab-conf_ssh-client::
 Add SSH client settings useful for connecting to Fermilab SSH Servers.
 
 fermilab-conf_ssh-client-delegate-all::
-The `fermilab-conf_ssh-client` package tries to only delegate credentials if it detects the remote host is a FNAL system.Add commentMore actions.  This package sets the SSH client to just always try to forward credentials.
+The `fermilab-conf_ssh-client` package tries to only delegate credentials if it detects the remote host is a FNAL system.  This package sets the SSH client to just always try to forward credentials.
 
 fermilab-conf_ssh-server::
 Configure your SSH Server for use on the Fermilab Network.
