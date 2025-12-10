@@ -211,12 +211,21 @@ if [[ "${IS_TESTING_REPO}" != 'TRUE' ]]; then
             SAMEDIR_REPOLOCAL=$(echo ${SAMEDIR} | sed -e "s|${DIST_REPO_SYNC_TARGET}||")
             PACKAGE_NAME=$(rpm -qp --qf "%{NAME}" ${FILENAME})
             NEWEST_TOP_RPM=$(basename $(newest_rpm_from_list $(ls ${SAMEDIR}/${PACKAGE_NAME}*.noarch.rpm | grep -v mirror | tr '\012' ' ')))
-        
+
             echo "Making ${PACKAGE_NAME}.rpm"
             (
              cd ${DIST_REPO_SYNC_TARGET};
              ln -s ${SAMEDIR_REPOLOCAL}/${NEWEST_TOP_RPM} ${PACKAGE_NAME}.rpm
             )
+            if [[ "${PACKAGE_NAME}" == 'fermilab-release' ]]; then
+                if [[ ! -e "${DIST_REPO_SYNC_TARGET}/yum-conf-fermilab.rpm" ]]; then
+                    echo "Making compat yum-conf-fermilab.rpm"
+                    (
+                     cd ${DIST_REPO_SYNC_TARGET};
+                     ln -s ${PACKAGE_NAME}.rpm yum-conf-fermilab.rpm
+                    )
+                fi
+            fi
         fi
     done
 
